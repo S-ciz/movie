@@ -64,7 +64,7 @@ nav a.navbar-brand {
 #showcase {
   position: relative;
   overflow: hidden;
-  height: 90vh;
+  height: 80vh;
   background: url(/img/netalt.jpg);
   background-color: black;
   background-size: cover;

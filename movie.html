@@ -171,7 +171,7 @@ fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${item}`)
 
         <div class="container  w-sm-50">
 <h3 class="fw-bold pb-1 text-sm-start text-center">${obj.title_long}</h3 class="fw-bold">
-    <p class="text-light lead text-sm-start text-center">${trun(obj.description_full, 70)}...
+    <p class="text-light lead text-start">${trun(obj.description_full, 70)}...
 
         </p>
         <span id="icons" class="d-flex gap-1 text-center">

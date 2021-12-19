@@ -65,7 +65,7 @@ nav a.navbar-brand {
   position: relative;
   overflow: hidden;
   height: 80vh;
-  background: url(/img/netalt.jpg);
+  background: url(netalt.jpg);
   background-color: black;
   background-size: cover;
   background-position: center;

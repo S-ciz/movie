@@ -38,7 +38,7 @@ class  UI{
 
 
         //fetch api
-      fetch(`https://yts.mx/api/v2/movie_suggestions.json?movie_id=11744`)
+      fetch(`https://yts.mx/api/v2/list_movies.json?query_term=my christmas`)
      .then(res=> res.json())
      .then(data=>{
         //get array of movies
@@ -47,7 +47,7 @@ class  UI{
            return a.year -b.year
          })
 //limit the length for css grid ( repeat4, 1fr)
-    //  arr.length =4;
+     arr.length =4;
     
 
         //loop through aray

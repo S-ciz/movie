@@ -8,16 +8,15 @@
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="font/all.min.css">
  
     
 </head>
-<body style="background: black;" >
+<body  style="background: black;" >
 
 
-
-
-<nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+<nav style="background-color: rgb(8, 8, 8)" id="nav" class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a id="active" href="#" class="navbar-brand fw-bold "><span class="text-light">Ans</span>ima</a>
         <button class="  navbar-toggler"
@@ -28,32 +27,72 @@
         <div class="navbar-collapse collapse text-center   " id="menu">
             <ul class="  navbar-nav ms-auto text-sm-start d-flex gap-sm-5 gap-0  ">
                 <li class="nav-item">
-                    <a  href="ind.html" class="nav-link fw-bold  mt-3 mt-sm-0 "> <i class="fa fa-home"></i> Home</a>
+                    <a style="background: red;"  href="ind.html#show" class="nav-link fw-bold  mt-3 mt-sm-0 "> <i class="fa fa-home"></i> Home</a>
+                </li>
+                
+                    <a href="#" class="nav-link"><i class="fa fa-book"></i> Blogs </a>
+                </li> <li class="nav-item">
+                    <a  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    
+                    href="#" class="nav-link"><img id="profile" src="/img/stan.png" alt="" class="img-fluid"> My Profile </a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link"><i class="fa fa-user"></i> Sign in </a>
-                </li> <li class="nav-item">
-                    <a href="index.html" class="nav-link"><i class="fa fa-add"></i> Create new account </a>
-                </li> <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-pen"></i> Blogs </a>
-                </li>
+                  <a href="index.html" class="nav-link"> <i class="fa fa-sign-out"></i> Log out</a>
+              </li>
             </ul>
         </div>
     </div>
 </nav>
     
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div  class="modal  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark text-center m-auto" id="exampleModalLabel"><img src="/img/stan.png" alt="" class="img-fluid w-50" id="profile">
+        <br>
+       Stan Cizungu
+        </h5>
+        <br>
+      
+      </div>
+      <div class="modal-body text-center m-auto">
+        
+        
+        <p class="lead text-dark">I am a front-end web developer, fitness instructor and amateur boxer who finds great
+          pleasure in programming and sustaining a healthy lifestyle
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a style="background: red;" href="" class="btn btn-sm text-light "><i class="fa fa-pen"></i> Edit</a>
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <header id="wrap" >  
 
 
 <main id="showcase" class="d-grid px-5  align-center justify-center ">
 <section id="content" class=" p-5 d-sm-flex gap-sm-3 justify-item-between  ">
-  <div class="text-sm-start text-center" >
-    <h1 class="text-light display-5 fw-bold pb-2">Unlimited Movies <br> On The Move</h1>
+  <div   class="text-sm-start text-center" >
+    <h1  class="text-light display-5 fw-bold pb-2">Unlimited Movies <br> On The Move</h1>
     <p class="text-light mt-2  lead">Looking for fantastic movies? Look no further! Search and download movies with ease using our uttorent site</p>
-    <a style="background: red;" class=" btn btn-lg  mb-sm-5 mt-4 text-light" href="#show">Explore Countless Movies</a>
+    <a id="transform" style="background: red;" class=" btn btn-lg  mb-sm-5 mt-4 text-light" href="#show">Explore Countless Movies</a>
   </div>
-  <div>
-<img load="eager" src="img/img.png" class="img-fluid d-sm-block d-none w-60 rounded" alt="girlImage">
+  <div class="py-3 mt-sm-5">
+<img load="eager" src="img/soldire.png" class="img-fluid d-sm-block d-none w-60 rounded" alt="girlImage">
   </div>
 </section>
 
@@ -66,16 +105,16 @@
 <span id="show"></span>
 
  
-<section style="background-color: black;" id="subscribe" class=" p-4 w-80 text-center">
+<section style="background-color: black;" id="subscribe" class=" p-4  text-center">
   <form   id="form">
-    <input autofocus  id="input" class="form-control w-100 text-center " type="text"  placeholder="Search movies...">
+    <input  id="input" class="form-control   text-center " type="text"  placeholder="Search movies...">
   </form>
   
   </section>
 
    
   <main id="that" style="background-color: black; " class="d-none">
-    <section  class="container  text-sm-start text-center" id="result">
+    <section  class="container p-5 text-sm-start text-center" id="result">
 
  <!--display function from javascript will be displayed here-->
     </section>
@@ -84,9 +123,9 @@
 
 
 
-    <main id="list"  style="background: black;">
+    <main id="list"  >
   
-      <span id="remove"> <h1   class="text-center text-light   fw-bold">Festive<span id="active">Collection</span></h1>
+      <span id="remove"> <h1   class="text-center text-light   fw-bold"><img id="rib" src="/img/ribb.png" class=" img-fluid" alt="">Festive<span id="active">Collection</span></h1>
       <hr   class="text-active w-50 text-center text-light m-auto   "></span>
        <section id="popular" class="container  d-sm-flex  text-center gap-2  gap-sm-3">
        </section>
@@ -97,7 +136,7 @@
   
     
 
-<div style="background-color: black;" id="kids" class=" p-2 text-light">
+<div  id="kids" class=" p-2 text-light">
 <div class="text-center container d-flex gap-2 justify-content-center ">
     <i class="fa fa-asterisk text-light"></i>
     <i class="fa fa-asterisk text-light"></i>
@@ -111,25 +150,29 @@
 
 
 
-
+    
 
     <section class="container text-sm-start text-center gap-sm-5 d-block d-sm-flex justify-item-between">
 
 
-        
+    
 <div class="text-light mt-5 p-3 mb-5 ">
-    <h1 class="mb-3">Let's <span id="active">Dive Deep</span></h1>
+    <h1 class="mb-3">Let's Dive Deep</h1>
     <p class="lead"> Welcome to our free uttorent site <br> Here we offer countless movies from all categories, as we aim to please!
         Create your account for notifications and more prizes
     </p>
     <button style="background: red;" class="btn btn-lg  text-light mt-3">Create Your Account</button>
 </div>
+ 
 
 <div >
-<img class="img-fluid text-center mt-5 card-img  w-60 d-sm-block d-none " src="img/aqua.png" alt="">
+<img class="img-fluid text-center mt-5 card-img  " src="img/dale.png" alt="">
 </div>
 
     </section>
+    <aside class="container" id="quote" class="p-5  bg-dark">
+
+    </aside>
 
 
    
@@ -174,7 +217,7 @@
 </div>
        
 <div class="text-light mt-sm-3 pt-sm-5 ">
-    <h1 class="mb-3">Subscribe for shows</h1>
+    <h1 class="mb-3">Subscribe For Shows</h1>
     <p class="lead"> Subscribe to become the first to get the latest notifications on upcoming shows,
       series, magazines and articles
     </p>
@@ -184,8 +227,14 @@
 
 </div>
 
+<aside style="height: 22rem;background-image: url(/img/titanic-1.jpg);
+background-size: cover; background-attachment: fixed;"
+ class="p-5 d-grid align-center justify-center bg-dark">
 
-
+ <h2 class="text-light text-center">The Only Way To Go!</h2>
+<p class="text-light lead text-center p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam saepe autem aliquid molestiae soluta veniam placeat, iusto fuga fugiat! Officiis!</p>
+<a style=" opacity: .8;" class="m-auto text-decoration-none p-2 btn btn-primary btn-lg text-light border-3 " href="#" id="btn">Discover</a>
+</aside>
 
 
 <!--return to top btn-->
@@ -236,7 +285,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="module" src="js/main.js"></script>
     <script src="js/all.min.js"></script>
-   
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
 

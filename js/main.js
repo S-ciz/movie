@@ -1,4 +1,5 @@
 
+
 //global variables
 var pop = document.getElementById('popular');
 var body = document.querySelector('body')
@@ -7,11 +8,10 @@ var body = document.querySelector('body')
 //create display function to return html
 function popular(img,title,id){
   return  ` <div class="card   border-0" ">
-  
     <img load="eager" src="${img}" class="card-img-top img-fluid " alt="...">
     <div style="background:black;" class="card-body  text-light">
       <p class="card-text text-light fw-bold">${trancate(title,4)}</p>
-      <a href="movie.html" id="click" style="background: red;" class=" btn btn-sm   text-light" >
+      <a href="movie.html" id="click" style="background: red;" class=" btn btn-sm d-grid   text-light" >
       <span class="identify" style="display:none;">${id}</span>
      Details
       </a>
@@ -28,7 +28,7 @@ class  UI{
 
     static load(){
         window.addEventListener('load', e=>{
-            UI.Display()
+            UI.Display('https://yts.mx/api/v2/list_movies.json?query_term=my christmas')
            
         })
     }
@@ -38,7 +38,8 @@ class  UI{
 
 
         //fetch api
-      fetch(`https://yts.mx/api/v2/list_movies.json?query_term=my christmas`)
+       
+      fetch(key)
      .then(res=> res.json())
      .then(data=>{
         //get array of movies
@@ -47,7 +48,7 @@ class  UI{
            return a.year -b.year
          })
 //limit the length for css grid ( repeat4, 1fr)
-     arr.length =4;
+      arr.length =4;
     
 
         //loop through aray
@@ -64,7 +65,7 @@ class  UI{
        var Head = document.getElementById('remove');
        Head.remove()
        body.classList = 'd-block  text-center d-grid mt-5 pt-5 m-auto text-light'
-        body.innerHTML = `<div class="container w-100 justify-content-center text-center"> 
+       body.innerHTML = `<div class="container w-100 justify-content-center text-center"> 
         <img style="width:8rem" class="img-fluid " src="/img/error.png" alt="...">
         <p class="text-light">Connect to the Internet!</p>
         <a style="background:red;" href="index.html" class="btn btn-sm text-light ">Reload Page</a>
@@ -117,14 +118,15 @@ form.addEventListener('submit',e=>{
 //get array
       var arr = data.data.movies
       var movies = document.querySelector('section#result');
-      var main = document.querySelector('main#list')
-      var show = document.getElementById('that');
+      var main = document.querySelector('main#list');
+      const show = document.getElementById('that');
+      const span = document.getElementById('remove')
       
   //remove pop
   pop.remove()
-
+  
     show.className = 'd-block'
-     
+     span.className = 'd-none'
      movies.innerHTML = ' '
      
       //loop through array
@@ -195,4 +197,4 @@ function check(e){
 
 
 
-//
+//transform

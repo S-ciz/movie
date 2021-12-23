@@ -12,94 +12,211 @@
  
     
 </head>
-<body style="background: black;" >
+<body >
 
 
+<style>
+    body{
+      
+        background-image: url(img/titanic-1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden;
+      
+    }
 
-
-<nav id="nav" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a id="active" href="#" class="navbar-brand fw-bold "><span class="text-light">Ans</span>ima</a>
-        <button class="  navbar-toggler"
-        data-bs-target="#menu"
-        data-bs-toggle="collapse">
-<span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="navbar-collapse collapse text-center   " id="menu">
-            <ul class="  navbar-nav ms-auto d-flex gap-sm-5 gap-0  ">
-                <li class="nav-item">
-                    <a  href="ind.html" class="nav-link fw-bold  mt-3 mt-sm-0 "> <i class="fa fa-home"></i> Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link"><i class="fa fa-user"></i> Sign in </a>
-                </li> <li class="nav-item">
-                    <a href="index.html" class="nav-link"><i class="fa fa-add"></i> Create new account </a>
-                </li> <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa fa-pen"></i> Blogs </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div style="filter: brightness(.80);" class="container mb-5 px-5   mt-5 " id="container">
-
-    <h1 class="text-center text-light mb-3 "><i class="fa  fa-film text-light"></i> <span style="color: red;">Movie</span>Account</h1>
-  
-    <form class="form container " id="myform">
-      <div class="container">
-        <label class="text-light">Name:</label>
-        <input type="text" id="name" class="form-control">
-        <label class="text-light">Password:</label>
-        <input type="text" id="book" class="form-control"> 
+    div#container{
         
-  <a style="background: red;" id="switch"  href="ind.html" class="btn btn-sm text-light d-grid w-100 mt-3">Sign in</a>
-  <a href="ind.html" class="text-light text-center m-auto d-grid mt-3    container">Create new account</a>
+       
+    
+       display: grid;
+      
+   margin: auto;
+       
+
+    }
+
+    form#myform{
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+    }
+    form#myform input{
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        color: white;
+    }
+    form#myform a#btn{
+        border: 1px solid #ccc;
+        padding: .2rem;
+        color:grey;
+        text-decoration: none;
+        width: 9rem;
+    }
+   
+</style>
+
+
+
+<div  class="  container  " id="container">
+
+    <form class="form " id="myform">
+
+        <h1 class="text-center text-light"><i class="fa fa-user "></i></h1>
+<h3 id="title" class="text-light text-center">Sign in</h3>
+<section class="container text-center w-80">
+    <div class="d-flex container px-4 text-center justify-content-between">  
+        <a id="btn" href="#"><i class="fab fa-facebook"></i> facebook</a>
+        <a id="btn" href="#"><i class="fab fa-google"></i> Google</a>
+     
+     </div>
+</section>
+<br>
+      <div class="w-100">
+       
+        <input type="text" id="name" class="form-control " placeholder="User Name">
+       <br>
+        <input type="number" id="pin" class="form-control" placeholder="User Pin"> 
+        
+
+  <a href="#" class="text-light text-center m-auto d-grid mt-3 d-grid btn-success py-1 text-decoration-none   container" id="sign">Sign In</a>
+  <br>
+  <a href="create.html" class="text-light text-center m-auto d-grid     container">Create new account</a>
       </div>
     </form>
-  
+
   </div>
 
 
-
-
-
-
   
-<footer style="background-color:black;">
-    <div class="p-3 container text-light text-center align-center">
-      <p class=" fw-bold">Copyright  All rights reserved Ansima pty(ltd) 2021 &copy; </p>
-      <div class=" justify-content-center m-auto d-flex gap-2">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-github"></i>
-    
-    
-      </div>
-    </div>
-     
-    </footer > 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
     
     
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
       
         <script src="js/all.min.js"></script>
-       
-    
-    
-    
         
+     
+
+
+
+
+ 
+       
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+    import { getFirestore, collection, getDocs,doc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD0qFqSu8ap3PykypuJZoeJ4VcEWKfjHGI",
+      authDomain: "movie-67447.firebaseapp.com",
+      projectId: "movie-67447",
+      storageBucket: "movie-67447.appspot.com",
+      messagingSenderId: "11085064442",
+      appId: "1:11085064442:web:c26e7405ab1a664ab04143",
+      measurementId: "G-6XM58KXE28"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    const data = getFirestore(app);
+
     
+// Get a list of cities from your database
+async function GetUsers(db){
+  const citiesCol = collection(db, 'users');
+  const citySnapshot = await getDocs(citiesCol);
+  const cityList = citySnapshot.docs.map(doc => doc.data());
+ 
+return cityList
+
+}
+
+
+
+    
+var res = await GetUsers(data)
+
+   
+/* Add a new document in collection "cities"
+await setDoc(doc(data, "users", "LA"), {
+  name: 'Benjamin',
+  pin: 5555
+});   */
+
+
+
+///form
+var in_name = document.getElementById('name');
+var in_pin = document.getElementById('pin');
+var form = document.getElementById('myform');
+var h3 = document.getElementById('title');
+
+var sign = document.getElementById('sign');
+
+sign.addEventListener('click', e=>{
+//get input value
+var verify = in_name.value==='' || in_pin.value=== ''
+
+if( verify ){
+msg('Enter All Fields!', 'danger', 2000, )
+}
+
+else{
+msg('Loading...', ' ', 7000);
+
+for(let item of res){
+if(item.name== in_name.value && item.pin==in_pin.value){
+sign.href= "ind.html"
+  window.location.pathname = 'ind.html'
+}else{
+ h3.textContent = 'User Not Found!!!'
+    
+  
+}
+
+}
+}
+
+})
+
+//validation function
+
+
+function msg(msg, type,time){
+var div = document.createElement('div');
+div.classList = `p-1 text-light text-center bg-${type}`
+div.textContent = msg
+form.insertBefore(div,h3)
+
+setTimeout(()=>{
+div.remove()
+},time)
+}
+
+
+
+      
+
+
+
+           
+    
+
+  </script>
+  
+       
     </body>
     </html>

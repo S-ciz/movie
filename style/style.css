@@ -12,9 +12,9 @@ span#icons {
   filter: brightness(0.5);
 }
 
-body {
+body{
   background: black;
-  
+background-image: url(/img/titanic-1.jpg);
 }
 
 input {
@@ -43,6 +43,21 @@ nav#nav {
   
 }
 
+div#container{
+  width: 50%;
+  
+ 
+ height: 100vh;
+ align-items: center;
+ align-content: center;
+ 
+  
+  margin: auto;
+  
+
+}
+
+
 nav a.navbar-brand {
   filter: brightness(0.5);
 }
@@ -64,8 +79,8 @@ nav a.navbar-brand {
 #showcase {
   position: relative;
   overflow: hidden;
-  height: 80vh;
-  background: url(netalt.jpg);
+  height: 100vh;
+  background: url(/img/titanic-1.jpg);
   background-color: black;
   background-size: cover;
   background-position: center;
@@ -74,7 +89,9 @@ nav a.navbar-brand {
 main#list {
   filter: brightness(0.9);
 }
-
+img#rib{
+  width: 50px;
+}
 
 section#content {
   position: absolute;
@@ -130,6 +147,9 @@ section#popular {
 
 section#popular p {
   color: #333;
+} 
+img#profile{
+  width: 50px;
 }
 
 div#kids div h1, div#kids div p {
@@ -140,7 +160,37 @@ main#list h1 span {
   filter: opacity(0.8);
 }
 
+form#form input{
+  display: grid;
+  width: 80%;
+}
+
+
+main#related-movie{
+  display: flex;
+}
+
+aside#quote{
+  position: relative;
+  background-image: url(/img/avenge.jfif);
+ 
+  height: 100px;
+}
+
+
 @media (max-width: 575px) {
+
+  div#container{
+    width: 100%;
+    margin: auto;
+    display: grid;
+  }
+
+  form#form input{
+    display: grid;
+    width: 100%;
+  }
+
   section#popular {
     display: grid;
     margin: auto;
@@ -160,6 +210,12 @@ main#list h1 span {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  main#related-movie{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+ 
 }
 
 @media (max-width: 800px) {
@@ -167,6 +223,7 @@ main#list h1 span {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  
 }
 
 main#movie_show #follow {

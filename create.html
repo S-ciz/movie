@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcmeDem | Sign Up</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="font/all.min.css">
+ 
+    
+</head>
+<body >
+
+
+<style>
+    body{
+      
+        background-image: url(img/titanic-1.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        overflow: hidden;
+      
+    }
+
+    div#container{
+        
+       
+    
+       display: grid;
+      
+   margin: auto;
+       
+
+    }
+
+    form#myform{
+        background: rgba(0, 0, 0, 0.5);
+        padding: 1rem;
+    }
+    form#myform input{
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        color: white;
+    }
+    form#myform a#btn{
+        border: 1px solid #ccc;
+        padding: .2rem;
+        color:grey;
+        text-decoration: none;
+        width: 9rem;
+    }
+   
+</style>
+
+
+
+<div  class=" mb-5 container  " id="container">
+
+    <form class="form " id="myform">
+
+        <h1 class="text-center text-light"><i class="fa fa-user "></i></h1>
+<h3 class="text-light text-center" id="title">Create new account</h3>
+
+<br>
+      <div class="w-100">
+       
+        <input type="text" id="name" class="form-control " placeholder="Enter Name">
+       <br>
+        <input  type="number" id="pin" class="form-control" placeholder="Enter Pin"> 
+       
+
+  <a href="#" class="text-light text-center m-auto d-grid mt-3 d-grid btn-success py-1 text-decoration-none   container" id="sign">Create new account</a>
+  <br>
+  <a href="index.html" class="text-light text-center m-auto d-grid     container">Sign in</a>
+      </div>
+    </form>
+
+  </div>
+
+
+  
+
+
+    
+    
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+      
+        <script src="js/all.min.js"></script>
+        
+        <script type="module">
+ 
+
+
+            ///form
+            var in_name = document.getElementById('name');
+            var in_pin = document.getElementById('pin');
+            var form = document.getElementById('myform');
+            var h3 = document.getElementById('title');
+
+            var sign = document.getElementById('sign');
+            
+            sign.addEventListener('click', e=>{
+//get input value
+var verify = in_name.value==='' || in_pin.value=== ''
+
+    if( verify ){
+msg('Enter All Fields!', 'danger', 2000, )
+    }
+    
+    else{
+
+     check(in_name.value, in_pin.value)
+
+
+      
+    }
+       
+
+
+            })
+
+//validation function
+
+
+function msg(msg, type,time){
+    var div = document.createElement('div');
+    div.classList = `p-1 text-light text-center bg-${type}`
+    div.textContent = msg
+form.insertBefore(div,h3)
+
+setTimeout(()=>{
+    div.remove()
+},time)
+}
+
+           
+    
+
+ 
+        </script>
+
+
+
+  
+  
+       
+    </body>
+    </html>
